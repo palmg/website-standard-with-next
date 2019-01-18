@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import {loadTvList} from '../components/z-demo-list/db'
-import {info} from "../util/log";
+import {loadTvList} from '../../components/z-demo-list/db'
+import {info} from "../../util/log";
 
 class DemoList extends React.Component {
     constructor(...props) {

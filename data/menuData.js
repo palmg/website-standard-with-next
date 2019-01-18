@@ -1,7 +1,8 @@
 const Menus = [
     {key: 'home', name: '首页', href: '/'},
     {key: 'about', name: '关于', href: '/about'},
-    {key: 'load-demo', name: '异步读取案例', href: '/z-demo-list'},
+    {key: 'load', name: '简单异步执行', href: '/async/simple'},
+    {key: 'load-demo', name: '远程异步读取', href: '/async/standard'},
 ];
 
 //获取菜单
