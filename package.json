@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "NODE_ENV=production node server/expressServer.js"
+    "start": "node server/expressServer.js"
   },
   "repository": {
     "type": "git",

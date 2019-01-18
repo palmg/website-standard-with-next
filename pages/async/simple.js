@@ -2,7 +2,10 @@ import React from 'react'
 
 const load = async () =>{
     return new Promise((res, rej)=>{
-        res('Success')
+        const timer = setTimeout(()=>{
+            res('Success');
+            clearTimeout(timer);//延迟效果
+        }, 4000);
     })
 }
 

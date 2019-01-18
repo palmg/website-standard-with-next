@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import {withRouter} from 'next/router'
-import {info} from "../../../util/log";
+import Link from 'next/link'
 
 /**
  * 自定义link组件
@@ -32,11 +31,6 @@ class LinkComp extends React.Component {
         return typeof children === 'string' ? React.createElement("a", props, children) : React.cloneElement(React.Children.only(this.props.children), props);
     }
 }
-
-const Link = withRouter(LinkComp);
-Link.defaultProps = {
-    id: 'NaN'
-};
 
 Link.propTypes = {
     id: PropTypes.string,

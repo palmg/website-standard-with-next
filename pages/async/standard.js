@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import {loadTvList} from '../../components/z-demo-list/db'
+import {loadTvList} from '../../components/async/standard/db'
 import {info} from "../../util/log";
 
 class DemoList extends React.Component {
