@@ -2,5 +2,13 @@
   "presets": [
     "next/babel"
   ],
-  "plugins": []
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": "css"
+      }
+    ]
+  ]
 }

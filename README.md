@@ -11,7 +11,13 @@
     ebpack: function (cfg, opt) {returan cfg;}
 }
 ```
-以下都已key/value的形式说明参数。
+## Nextjs调用链条
+1. _app getInitialProps Methon
+1. _app constructor
+1. _app render
+1. _document getInitialProps
+1. _document constructor
+1. _document render
 ### 通用自定义配置
 1. 输出文件配置：key:distDir, value:项目根目录向下的路径。例如`{distDir: 'dist'}`。
 2. 
