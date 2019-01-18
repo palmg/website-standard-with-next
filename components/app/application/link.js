@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import {withRouter} from 'next/router'
+import {info} from "../../../util/log";
 
 /**
  * 自定义link组件
@@ -14,14 +15,14 @@ import {withRouter} from 'next/router'
 class LinkComp extends React.Component {
     constructor(...props) {
         super(...props);
-        this.handleClick = this.handleClick.bind(this)
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(e) {
         const {props} = this;
         if (props.href !== props.router.route) {
             props.onClick && props.onClick(props.id, e);
-            setTimeout(() => props.router.push(props.href), 100);
+            props.router.push(props.href)
         }
     };
 

@@ -2,8 +2,8 @@ import React from 'react'
 import {Menu as M} from 'antd';
 import Link from "./link";
 import ApplicationContext from '../applicationContext'
-import {registerAsyncFoo} from '../../util/serverInitProps'
-import {getMenus} from '../../data/menuData'
+import {registerAsyncFoo} from '../../../util/serverInitProps'
+import {getMenus} from '../../../data/menuData'
 
 const {Item} = M;
 registerAsyncFoo('menus', getMenus);

@@ -1,6 +1,7 @@
 import Document, {Head, Main, NextScript} from 'next/document'
 import React from "react";
 import {executeAsyncFoo} from '../util/serverInitProps'
+import {info} from "../util/log";
 
 const writeCookie = ()=>{
     const exdate = new Date();
@@ -16,7 +17,7 @@ const writeCookie = ()=>{
 export default class DocumentExt extends Document {
     constructor() {
         super();
-        console.log('DocumentExt constructor');
+        info('Execute _Document constructor()!', 'executeReport');
     }
 
     static async getInitialProps(ctx) {
@@ -24,13 +25,16 @@ export default class DocumentExt extends Document {
          * 这一段代码会在每一个终端第一次访问时在服务端渲染执行一次。
          * 例如浏览器打开当前网站或者刷新页面。可以将一些与单个用户相关的数据在这里注入到页面上。
          */
+
+        info('Execute _Document getInitialProps() before _App render()!', 'executeReport');
         const initialProps = await Document.getInitialProps(ctx);
-        console.log('Document getInitialProps');
+        info('Execute _Document getInitialProps() after _App render()!', 'executeReport');
+
         return {...initialProps}
     }
 
     render() {
-        console.log('Document render');
+        info('Execute _Document render()!', 'executeReport');
         return (
             <html>
                 <Head>

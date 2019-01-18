@@ -1,11 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-import {loadTvList} from './z-demo-list/db'
+import {loadTvList} from '../components/z-demo-list/db'
+import {info} from "../util/log";
 
 class DemoList extends React.Component {
     constructor(...props) {
-        console.log('Component constructor');
         super(...props);
+        info('Execute _Page constructor()!', 'executeReport');
     }
 
     /**
@@ -13,7 +14,7 @@ class DemoList extends React.Component {
      * @return {Promise<{shows: *}>}
      */
     static async getInitialProps({req, query}) {
-        console.log('Component getInitialProps');
+        info('Execute _Page getInitialProps()!', 'executeReport');
         const isServer = !!req; //这是一个在管理案例中写的判断是否为服务器运行的方法
 
         const data = await loadTvList();
@@ -26,7 +27,7 @@ class DemoList extends React.Component {
     }
 
     render() {
-        console.log('Component render');
+        info('Execute _Page render()!', 'executeReport');
         return (<React.Fragment>
             <p>异步请求测试</p>
             <ul>
