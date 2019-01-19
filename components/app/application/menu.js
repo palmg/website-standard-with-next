@@ -17,7 +17,9 @@ const Menu = props => {
                     {pathname} = props.router;
                 return (<M theme="dark"
                            mode="horizontal"
-                           defaultSelectedKeys={menus.filter(menu => menu.href === pathname).map(menu => menu.key)}>
+                           defaultSelectedKeys={
+                               menus.filter(menu => menu.href.replace(/\?[a-zA-Z0-9=]+/, '') === pathname).map(menu => menu.key)
+                           }>
                     {menus.map(menu => (
                         <Item key={menu.key}>
                             <Link href={menu.href}>
