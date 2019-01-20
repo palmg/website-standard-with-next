@@ -1,16 +1,17 @@
 const FooDict = {};
 
-export const registerAsyncFoo = (key, foo, params = {}) =>{
+//注册方法
+export const registerAsyncFoo = (key, foo, params = {}) => {
     FooDict[key] = {foo, params};
 };
 
+//获取方法
 export const executeAsyncFoo = async () => {
     const valueDict = {};
     const keys = Object.keys(FooDict);
-    for(let key of keys){
+    for (let key of keys) {
         const dict = FooDict[key];
-        const value = await dict.foo(dict.params);
-        valueDict[key] = value
+        valueDict[key] = await dict.foo(dict.params);
     }
     return valueDict;
-}
+};
