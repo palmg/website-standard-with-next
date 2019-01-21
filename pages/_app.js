@@ -6,16 +6,13 @@ import App, {Container} from 'next/app'
 import Application from '../components/app/application'
 import ApplicationContext from '../components/app/applicationContext'
 import {executeAsyncFoo} from "../util/serverInitProps";
-import {info} from '../util/log'
 
 class ExpressApp extends App {
     constructor(...props) {
         super(...props);
-        info('Execute _App constructor()!', 'executeReport');
     }
 
     static async getInitialProps({Component, router, ctx}) {
-        info('Execute _App getInitialProps()!', 'executeReport');
         /**
          * app的getInitialProps会在服务端被调用一次，在前端每次切换页面时被调用。
          */
@@ -32,7 +29,6 @@ class ExpressApp extends App {
     }
 
     render() {
-        info('Execute _App render()!', 'executeReport');
         const {Component, pageProps, appProps} = this.props;
         return (
             <Container>

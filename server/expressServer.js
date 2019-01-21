@@ -1,6 +1,6 @@
 const express = require('express'),
     next = require('next'),
-    writeCookie = require('./middleware/cookie'),
+    activityMiddleware = require('./middleware/config'),
     pageCache = require('./middleware/pageCache'),
     //环境指示器
     env = process.env.NODE_ENV !== 'production',
@@ -14,11 +14,10 @@ const express = require('express'),
 app.prepare()
     .then(() => {
         const server = express();
-        server.use((req, res, next) => {
-            writeCookie(app, req, res, next)
-        });
-        server.use((req, res, next) => {
-            pageCache(app, req, res, next)
+        activityMiddleware.forEach(foo=>{
+            server.use((req, res, next) => {
+                foo(app, req, res, next)
+            })
         });
         server.get('*', (req, res) => {
             return handle(req, res);

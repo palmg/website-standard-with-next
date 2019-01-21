@@ -7,7 +7,7 @@
     "dev": "next",
     "dev-server": "node server/expressServer.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server/expressServer.js"
+    "start": "cross-env NODE_ENV=production node server/expressServer.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,9 @@
     "lru-cache": "^5.1.1",
     "next": "^7.0.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "ua-parser-js": "^0.7.19",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@zeit/next-css": "^1.0.1",

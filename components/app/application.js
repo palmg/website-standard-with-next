@@ -36,7 +36,7 @@ class Application extends React.Component {
                     <Menu onMenuClick={this.handleMenuClick}/>
                 </Header>
                 <Content style={{position: 'relative', padding: '50px'}}>
-                    {this.state.loading ? (<Loading/>) : this.props.children}
+                    {this.props.children}
                 </Content>
                 <Footer style={{textAlign: 'center', background: '#001529', color: 'rgba(255, 255, 255, 0.65)'}}>
                     模板案例
