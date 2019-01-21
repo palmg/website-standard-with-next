@@ -41,7 +41,7 @@ export default class DocumentExt extends Document {
                     <style>{'#__next{height:100%;}'}</style>
                     <script dangerouslySetInnerHTML={{__html:writeCookie()}}/>
                 </Head>
-                <body>
+                <body className="custom_class">
                     <Main/>
                     <NextScript/>
                 </body>

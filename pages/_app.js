@@ -28,7 +28,7 @@ class ExpressApp extends App {
         } else {//服务端
             appProps = await executeAsyncFoo();
         }
-        return {pageProps, appProps}
+        return {pageProps, appProps};
     }
 
     render() {
@@ -49,7 +49,7 @@ class ExpressApp extends App {
                     </ApplicationContext.Provider>
                 </LocaleProvider>
             </Container>
-        )
+        );
     }
 }
 

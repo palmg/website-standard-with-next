@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
+    "dev-server": "node server/expressServer.js",
     "build": "next build",
-    "start": "node server/expressServer.js"
+    "start": "NODE_ENV=production node server/expressServer.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "antd": "^3.12.3",
     "express": "^4.16.4",
     "isomorphic-unfetch": "^3.0.0",
+    "lru-cache": "^5.1.1",
     "next": "^7.0.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
