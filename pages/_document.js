@@ -27,8 +27,6 @@ export default class DocumentExt extends Document {
 
     render() {
         const {browser} = this.props;
-        console.log(this);
-        console.log(browser);
         return (
             <html>
                 <Head>

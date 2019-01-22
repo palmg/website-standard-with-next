@@ -1,7 +1,7 @@
 import React from 'react'
 import Router from 'next/router'
 import {withRouter} from 'next/router'
-import {generateSign, checkSign} from '../../util/routingTypeSing'
+import {generateSign, checkSign} from '../../../util/routingTypeSign'
 
 const RouteType = {
     Start: 'startRoute',
@@ -22,7 +22,7 @@ const RouteType = {
  * @returns {Function}
  */
 const route = OriginComp => {
-    return withRouter(class extends React.Component {
+    class Route extends React.Component {
         state = {pageRoute: false, localRoute: false};
 
         componentDidMount() {
@@ -52,7 +52,8 @@ const route = OriginComp => {
             delete params.router;
             return (<OriginComp {...params}/>)
         }
-    })
+    }
+    return withRouter(Route)
 };
 
 export default route

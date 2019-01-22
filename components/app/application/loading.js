@@ -24,9 +24,12 @@ class Loading extends React.Component {
         while (count++ < dots) {
             dotStr += '.'
         }
-        return (<div className={cn('loading')}>
-            <p className={cn('loading-title')}>数据加载中{dotStr}</p>
-            <Spin size="large"/>
+        return (<div className={cn('contain')}>
+            <div className={cn('mask')}/>
+            <div className={cn('loading')}>
+                <p className={cn('loading-title')}>数据加载中{dotStr}</p>
+                <Spin size="large"/>
+            </div>
         </div>)
     }
 }
